@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<head>
+  
+    <title>FAQ Section with CSS Styling</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 2rem;
+            background-color: #f5f5f5;
+        }
+
+        /* FAQ Container */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* FAQ Title */
+        .faq-title {
+            text-align: center;
+            color: #333;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+        }
+
+        /* FAQ List */
+        .faq-list {
+            counter-reset: faq-counter;
+            list-style: none;
+        }
+
+        /* FAQ Item */
+        .faq-item {
+            margin-bottom: 1.5rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        /* Question styling */
+        .faq-question {
+            padding: 1rem;
+            background-color: #f8f8f8;
+            cursor: pointer;
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        /* Counter for questions */
+        .faq-question::before {
+            counter-increment: faq-counter;
+            content: counter(faq-counter);
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #007bff;
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+
+        /* Answer styling */
+        .faq-answer {
+            padding: 0 1rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background-color: white;
+        }
+
+        /* Hover effect on FAQ items */
+        .faq-item:hover {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Active state for questions */
+        .faq-item.active .faq-question {
+            background-color: #e9ecef;
+        }
+
+        /* Show answer when active */
+        .faq-item.active .faq-answer {
+            padding: 1rem;
+            max-height: 500px;
+        }
+
+        /* Plus/minus icon */
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            color: #007bff;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: translateY(-50%) rotate(45deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="faq-container">
+        <h1 class="faq-title">Frequently Asked Questions</h1>
+        <ul class="faq-list">
+            <li class="faq-item">
+                <div class="faq-question">What is CSS?</div>
+                <div class="faq-answer">
+                    CSS (Cascading Style Sheets) is a style sheet language used for describing the presentation of a document written in HTML or XML. CSS describes how elements should be rendered on screen, on paper, in speech, or on other media.
+                </div>
+            </li>
+            <li class="faq-item">
+                <div class="faq-question">What are CSS Pseudo-classes?</div>
+                <div class="faq-answer">
+                    Pseudo-classes are keywords that specify a special state of an element. They are used to style elements based on their state, such as :hover, :active, :focus, :first-child, etc. They are added to selectors with a colon.
+                </div>
+            </li>
+            <li class="faq-item">
+                <div class="faq-question">What are CSS Pseudo-elements?</div>
+                <div class="faq-answer">
+                    Pseudo-elements are keywords that let you style a specific part of an element. They are added to selectors with two colons (::) and include ::before, ::after, ::first-line, and ::first-letter.
+                </div>
+            </li>
+            <li class="faq-item">
+                <div class="faq-question">What are CSS Counters?</div>
+                <div class="faq-answer">
+                    CSS counters are variables maintained by CSS whose values can be incremented by CSS rules. They let you adjust the appearance of content based on its placement in the document. They are particularly useful for automatically numbering elements.
+                </div>
+            </li>
+        </ul>
+    </div>
+
+   
+</body>
+</html>

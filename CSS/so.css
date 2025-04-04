@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f8f8;
+}
+
+.offer-card {
+    position: relative;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 350px;
+    border: 2px solid #ccc;
+}
+
+.offer-badge {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    background: red;
+    color: white;
+    padding: 5px 12px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.offer-card h2 {
+    margin: 20px 0 10px;
+    font-size: 22px;
+}
+
+.offer-card p {
+    font-size: 16px;
+    color: #333;
+}
+
+.shop-btn {
+    margin-top: 15px;
+    padding: 10px 15px;
+    background: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.shop-btn:hover {
+    background: darkgreen;
+}
